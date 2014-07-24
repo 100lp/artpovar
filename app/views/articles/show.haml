@@ -1,6 +1,7 @@
 %article
 	= raw @article.title
-	= raw @article.description
+	%div{style: 'overflow: hidden'}
+		= raw @article.description
 	%br
 	= raw @article.body
 
