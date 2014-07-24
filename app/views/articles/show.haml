@@ -1,6 +1,7 @@
 %article
 	= raw @article.title
 	= raw @article.description
+	%br
 	= raw @article.body
 
 	= link_to '< НАЗАД', "/#{@article.category.name}"
