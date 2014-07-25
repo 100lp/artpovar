@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   
   # navigation
   get '/about', to: 'pages#about'
+  get '/news', to: 'pages#news'
   get '/pressa', to: 'pages#pressa'
   get '/classes', to: 'pages#classes'
   get '/doings', to: 'pages#doings'

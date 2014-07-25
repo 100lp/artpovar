@@ -1,0 +1,9 @@
+- category = Category.where(name: action_name).first
+- articles = category.articles.order('created_at').reverse
+- articles.map do |article|
+  %h2
+    =article.title
+  %article
+    =raw article.description
+    - if !article.body.empty?
+      = link_to 'ПОДРОБНЕЕ >', category_article_path(article.category.name, article.id)
