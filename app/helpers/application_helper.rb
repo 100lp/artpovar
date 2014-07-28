@@ -17,4 +17,19 @@ module ApplicationHelper
 	    end
 	  end
 	end
+
+	def english_link(link_text, link_path)
+		class_name = request.fullpath.include?('/en') ? 'active' : ''
+
+  	link_to link_path, :class => class_name do
+	    link_text
+	  end
+	end
+	def russian_link(link_text, link_path)
+		class_name = request.fullpath.include?('/en') ? '' : 'active'
+
+  	link_to link_path, :class => class_name do
+	    link_text
+	  end
+	end
 end
