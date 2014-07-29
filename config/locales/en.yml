@@ -20,4 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  ugolki: "Nooks of your soul"
+  sozvezdie: "In constellation of the Elephant"
+  ledi: "LADY"
+  painting: "PAINTING"
+  about: "ABOUT"
+  news: "NEWS"
+  pressa: "PRESS"
+  classes: "MASTERCLASSES"
+  doings: "EVENTS"
+  contacts: "CONTACT"
+
+  sitename: "Art-Cook"
+  painter: "painter"
+  author: "Nagejda Ilyna"
+
+  copyright: "The use of materials posted on this site is permitted only with the consent of the author and link to the source."

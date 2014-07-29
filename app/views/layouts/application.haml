@@ -13,13 +13,13 @@
       %aside
         #info
           .title
-            Арт-Повар
+            = t('sitename')
             %br
             %span
-              художник
+              = t('painter')
             %br
             %h1
-              Надежда Ильина
+              = t('author')
           .soc-icons
             =link_to '', 'https://www.facebook.com/nadezda.ilina.3', class: 'fb', target: '_blank'
             =link_to '', 'https://vk.com/art_povar', class: 'vk', target: '_blank'
@@ -42,4 +42,4 @@
           \/
           =english_link 'ENG', '/en'
       %p
-        Использование материалов, размещенных на сайте, допускается только с согласия автора с обязательной ссылкой на источник.
+        = t('copyright')
