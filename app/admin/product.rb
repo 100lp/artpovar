@@ -1,16 +1,23 @@
 ActiveAdmin.register Product do
   # belongs_to :category
   # navigation_menu :category
-  permit_params :image, :mini_image, :year, :name, :text, :category, :category_id
+  permit_params :image, :mini_image, :year, :name, :ename, :text, :etext, :category, :category_id
 
   menu :label => "Галереи"
+
   show do
     attributes_table do
-      row "Название", :title do |image|
+      row "Название", :name do |image|
         raw image.name
+      end
+      row "Название (ENG)", :ename do |image|
+        raw image.ename
       end
       row "Текст", :description do |image|
         raw image.text
+      end
+      row "Текст (ENG)", :description do |image|
+        raw image.etext
       end
       row "Год", :description do |image|
         raw image.year
@@ -34,7 +41,9 @@ ActiveAdmin.register Product do
       f.input :mini_image, as: :file, :label => "Мини изображение"
       f.input :image, as: :file, :label => "Изображение"
       f.input :name, :label => "Название"
+      f.input :ename, as: :string, :label => "Название (ENG)"
       f.input :text, :label => "Текст"
+      f.input :etext, as: :string, :label => "Текст (ENG)"
       f.input :year, :label => "Год"
       f.input :category, :as => :select, :collection => Category.all.map {|c| [c.title, c.id]}, :validate => false, :label => "Категория"
     end
