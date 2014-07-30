@@ -28,10 +28,10 @@
           = render 'layouts/nav'
     %section
       #left_nav
-        - if @vk_nav.include? @current_page or @current_page.include? "categories"
-          = render 'layouts/vk_nav'
-        - else
+        - if @gallery_nav.include? @current_page or @current_page == root_path
           = render 'layouts/left_nav'
+        - else
+          = render 'layouts/vk_nav'
       #content
         = yield
 
