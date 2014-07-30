@@ -1,4 +1,7 @@
 ru:
+  time:
+    formats:
+      long: "%d/%m/%Y %H:%M"
   ugolki: "Уголки души твоей"
   sozvezdie: "В созвездии слона"
   ledi: "ЛЕДИ"

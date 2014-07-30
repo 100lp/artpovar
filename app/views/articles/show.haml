@@ -1,9 +1,19 @@
 %article
-	%h2	
-		= raw @article.title
-	%div{style: 'overflow: hidden'}
-		= raw @article.description
-	%br
-	= raw @article.body
+	- if I18n.locale == :ru
+		%h2	
+			= raw @article.title
+		%div{style: 'overflow: hidden'}
+			= raw @article.description
+		%br
+		= raw @article.body
 
-	= link_to '< НАЗАД', "/#{@article.category.name}"
+		= link_to '< НАЗАД', "/#{@article.category.name}"
+	- else
+		%h2	
+			= raw @article.etitle
+		%div{style: 'overflow: hidden'}
+			= raw @article.edescription
+		%br
+		= raw @article.ebody
+
+		= link_to '< BACK', "/en/#{@article.category.name}"

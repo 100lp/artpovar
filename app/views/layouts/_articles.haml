@@ -1,0 +1,22 @@
+- if I18n.locale == :ru
+  - category = Category.where(name: action_name).first
+  - articles = category.articles.order('created_at').reverse
+  - articles.map do |article|
+    - if !category.name.include?('contacts')
+      %h2
+        =article.title
+    %article
+      =raw article.description
+      - if !article.body.empty?
+        = link_to 'ПОДРОБНЕЕ >', category_article_path(article.category.name, article.id)
+- else
+  - category = Category.where(name: action_name).first
+  - articles = category.articles.order('created_at').reverse
+  - articles.map do |article|
+    - if !category.name.include?('contacts')
+      %h2
+        =article.etitle
+    %article
+      =raw article.edescription
+      - if !article.ebody.empty?
+        = link_to 'READ MORE >', category_article_path(article.category.name, article.id)
