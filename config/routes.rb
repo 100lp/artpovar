@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
-
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
-    resources :categories, only: :show do
-      resources :articles, only: :show, path: ''
-    end
-
+    
     root 'pages#index'
     # обратная связь
     # get 'contact' => 'contact#new', :as => 'contact'
@@ -28,5 +24,9 @@ Rails.application.routes.draw do
     get '/sozvezdii-slona', to: 'pages#sozvezdie'
     get '/lady', to: 'pages#lady'
     get '/homo-insectarium', to: 'pages#homo'
+
+    resources :categories, only: [], path: ''  do
+      resources :articles, only: :show, path: ''
+    end
   end 
 end
