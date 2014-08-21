@@ -1,15 +1,16 @@
 = render 'layouts/articles'
 
-/ = form_tag("/message") do
-/   = label_tag("Имя:")
-/   = text_field_tag(:user_name)
-/   %br
-/   = label_tag("Почта:")
-/   = text_field_tag(:user_email)
-/   %br
-/   = label_tag("Сообщение")
-/   = text_area_tag(:message, "", size: "24x6")
+= form_for Message.new do |form|
+  %div
+    = label_tag("Имя:")
+    = text_field_tag(:name)
+  %div
+    = label_tag("Почта:")
+    = text_field_tag(:email)
+  %div
+    = label_tag("Сообщение:")
+    = text_area_tag(:body, "", size: "24x6")
 
-/   %br
-/   %br
-/   = submit_tag("Отправить")
+  %br
+  %br
+  = submit_tag("Отправить")

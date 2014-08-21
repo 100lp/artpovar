@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     
     root 'pages#index'
     # обратная связь
-    # get 'contact' => 'contact#new', :as => 'contact'
-    # post 'contact' => 'contact#create'
+    get '/messages' => 'messages#new', :as => 'messages'
+    post '/messages' => 'messages#create'
     
     # navigation
     get '/about', to: 'pages#about'
