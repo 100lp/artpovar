@@ -3,14 +3,12 @@
 = form_for Message.new do |form|
   %div
     = label_tag("Имя:")
-    = text_field_tag(:name)
+    = form.text_field :name
   %div
     = label_tag("Почта:")
-    = text_field_tag(:email)
+    = form.text_field :email
   %div
     = label_tag("Сообщение:")
-    = text_area_tag(:body, "", size: "24x6")
+    = form.text_area :body
 
-  %br
-  %br
-  = submit_tag("Отправить")
+  = form.submit "Отправить"
