@@ -3,11 +3,11 @@
     - cat = Category.where(name: action_name).first
     - gallery = cat.products.order('created_at').reverse
     - gallery.map do |product|
-      = link_to image_path(product.image), class: 'fancybox', rel: "gallery1", title: "#{product.name}", data: { caption: "#{product.text}\n #{product.year}"} do
+      = link_to image_path(product.image), class: 'fancybox', rel: "gallery1", title: "#{product.name}", data: { caption: "#{product.text}\n #{product.year}\n <span>#{product.purchase}</span>"} do
         =image_tag product.mini_image
   - else
     - cat = Category.where(name: action_name).first
     - gallery = cat.products.order('created_at').reverse
     - gallery.map do |product|
-      = link_to image_path(product.image), class: 'fancybox', rel: "gallery1", title: "#{product.ename}", data: { caption: "#{product.etext}\n #{product.year}"} do
+      = link_to image_path(product.image), class: 'fancybox', rel: "gallery1", title: "#{product.ename}", data: { caption: "#{product.etext}\n #{product.year}"}, data: { something: " #{product.epurchase} " } do
         =image_tag product.mini_image
