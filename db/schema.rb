@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140823100312) do
   create_table "articles", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "title"
+    t.string   "title"
     t.text     "body"
     t.integer  "category_id"
     t.text     "description"
