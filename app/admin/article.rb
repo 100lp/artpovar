@@ -40,16 +40,16 @@ ActiveAdmin.register Article do
       f.input :category, :as => :select, :collection => Category.all.map {|c| [c.title, c.id]}, :label => "Категория"
     end
     f.inputs "Описание" do
-      f.cktext_area :description, :ckeditor => { :uiColor => '#FFF07B', toolbar: 'Full' }
+      f.cktext_area :description, :ckeditor => { :uiColor => '#FFF07B', toolbar: 'Full', filebrowserImageBrowseUrl: '/ckeditor/pictures', filebrowserImageUploadUrl: '/ckeditor/pictures' }
     end
     f.inputs "Описание (ENG)" do
-      f.cktext_area :edescription, :ckeditor => { :uiColor => '#89FA27', toolbar: 'Full' }
+      f.cktext_area :edescription, :ckeditor => { :uiColor => '#89FA27', toolbar: 'Full', filebrowserImageBrowseUrl: '/ckeditor/pictures', filebrowserImageUploadUrl: '/ckeditor/pictures' }
     end
     f.inputs "Весь материал" do
-      f.cktext_area :body, :ckeditor => { :uiColor => '#FFF07B', toolbar: 'Full' }
+      f.cktext_area :body, :ckeditor => { :uiColor => '#FFF07B', toolbar: 'Full', filebrowserImageBrowseUrl: '/ckeditor/pictures', filebrowserImageUploadUrl: '/ckeditor/pictures' }
     end
     f.inputs "Весь материал (ENG)" do
-      f.cktext_area :ebody, :ckeditor => { :uiColor => '#89FA27', toolbar: 'Full' }
+      f.cktext_area :ebody, :ckeditor => { :uiColor => '#89FA27', toolbar: 'Full', filebrowserImageBrowseUrl: '/ckeditor/pictures', filebrowserImageUploadUrl: '/ckeditor/pictures' }
     end
     f.actions
   end
