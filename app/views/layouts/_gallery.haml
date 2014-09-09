@@ -9,5 +9,5 @@
     - cat = Category.where(name: action_name).first
     - gallery = cat.products.order('created_at').reverse
     - gallery.map do |product|
-      = link_to image_path(product.image), class: 'fancybox', rel: "gallery1", title: "#{product.ename}", data: { caption: "#{product.etext}\n #{product.year}\n <span>#{product.purchase}</span>"} do
+      = link_to image_path(product.image), class: 'fancybox', rel: "gallery1", title: "#{product.ename}", data: { caption: "#{product.etext}\n #{product.year}\n <span>#{product.epurchase}</span>"} do
         =image_tag product.mini_image
